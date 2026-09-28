@@ -1,0 +1,87 @@
+/*!
+ * instant-search-index - combobox styling, family dark theme
+ * Zero dependencies. https://github.com/bryanhamiltondev/instant-search-index
+ * MIT licensed.
+ */
+
+.isi-wrap {
+  position: relative;
+}
+
+.isi-list {
+  position: absolute;
+  z-index: 50;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: #161b22;
+  border: 1px solid rgba(227, 179, 65, 0.35);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.isi-list li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: #e6edf3;
+  text-decoration: none;
+  font: 15px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.isi-list li a:hover {
+  background: rgba(227, 179, 65, 0.08);
+}
+
+.isi-active a {
+  background: rgba(227, 179, 65, 0.12) !important;
+  outline: none;
+}
+
+.isi-list mark {
+  background: none;
+  color: #e3b341;
+  font-weight: 700;
+}
+
+.isi-sub {
+  color: #8b949e;
+  font-size: 13px;
+  margin-left: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.isi-badge {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #e3b341;
+  border: 1px solid rgba(227, 179, 65, 0.4);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.isi-empty {
+  padding: 12px;
+  color: #8b949e;
+  font: 14px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .isi-list { animation: isi-in 0.12s ease-out; }
+  @keyframes isi-in {
+    from { opacity: 0; transform: translateY(-3px); }
+    to   { opacity: 1; transform: none; }
+  }
+}
