@@ -14,10 +14,9 @@
     </linearGradient>
     <linearGradient id="shimmer" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#8b949e"/>
-      <stop offset="25%" stop-color="#e6edf3"/>
-      <stop offset="40%" stop-color="#ffffff"/>
+      <stop offset="30%" stop-color="#e6edf3"/>
       <stop offset="50%" stop-color="#ffffff"/>
-      <stop offset="60%" stop-color="#e6edf3"/>
+      <stop offset="70%" stop-color="#e6edf3"/>
       <stop offset="100%" stop-color="#8b949e"/>
     </linearGradient>
   </defs>
@@ -26,12 +25,10 @@
   <rect x="0" y="636" width="900" height="4" fill="url(#g2)"/>
   <circle cx="1100" cy="100" r="250" fill="rgba(0,210,255,0.04)"/>
   <circle cx="100" cy="500" r="200" fill="rgba(0,210,255,0.03)"/>
-  <text x="80" y="160" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="72" font-weight="800" fill="#ffffff" letter-spacing="-1">instant-search-index</text>
-  <text x="80" y="240" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="28" fill="url(#shimmer)" font-weight="500">
-    <tspan x="80" dy="0">Instant client-side search from a prebuilt JSON index.</tspan>
-    <tspan x="80" dy="42" font-weight="700" font-style="italic">Scored matching, ARIA combobox, zero server round-trips.</tspan>
-  </text>
-  <text x="80" y="540" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="18" fill="#00d2ff" letter-spacing="2" font-weight="600">BRYANHAMILTONDEV &bull; VANILLA JS &bull; ZERO DEPENDENCIES</text>
+  <text x="80" y="160" font-family="system-ui,sans-serif" font-size="72" font-weight="800" fill="#ffffff" letter-spacing="-1">instant-search-index</text>
+  <text x="80" y="230" font-family="system-ui,sans-serif" font-size="28" fill="url(#shimmer)">Instant client-side search from a prebuilt JSON index.</text>
+  <text x="80" y="275" font-family="system-ui,sans-serif" font-size="30" font-weight="bold" font-style="italic" fill="url(#shimmer)">Scored matching, ARIA combobox, zero server round-trips.</text>
+  <text x="80" y="540" font-family="system-ui,sans-serif" font-size="18" fill="#00d2ff" letter-spacing="2" font-weight="600">BRYANHAMILTONDEV &bull; VANILLA JS &bull; ZERO DEPENDENCIES</text>
   <g transform="translate(1100,460)">
     <rect x="0" y="15" width="16" height="45" rx="2" fill="url(#eq)"/>
     <rect x="20" y="-5" width="16" height="65" rx="2" fill="url(#eq)"/>
