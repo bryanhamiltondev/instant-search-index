@@ -129,3 +129,4 @@ pattern: what ships here is the idea, not the infrastructure.
 ## License
 
 MIT
+Built by Bryan Hamilton
