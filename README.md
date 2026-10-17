@@ -119,6 +119,36 @@ escaped before it is rendered; index entries are data, not markup.
 - The page, not the network, carries the index - so keep catalogs to the size
   that makes sense in a payload (hundreds of records: trivially fine).
 
+## When NOT to use this
+
+Every pattern repo has a failure mode: people stretching it past its shape.
+Here is where this one breaks, so you find out here instead of in production.
+
+- **Per-viewer results.** The moment results must differ by viewer - country,
+  language, role, entitlements - one shared index either carries rows it
+  shouldn't, or fragments into one index per segment and the page-weight math
+  changes shape. This pattern assumes the public case: everyone sees the same
+  catalog. Personalization is a different architecture, not this one stretched
+  past its shape.
+- **Editorial content with no deploy.** A build-time index cannot drift, but
+  it can go stale by however long it's been since the last build. If your site
+  deploys when content changes (static site, deploy-on-merge), staleness is
+  zero - the pattern working as designed. If editors publish through a CMS
+  with no deploy attached, staleness is unbounded, and your index has become a
+  cache of the CMS - treat it like one: webhook-push it when content changes
+  and watch the gap. Even then, staleness is a number you can read; sync drift
+  is invisible until someone complains. Still the better failure - but be
+  eyes-open about which failure you are choosing.
+- **Catalogs that don't fit the page.** The whole trick is the page already
+  carrying the data it needs. Thousands of small records is the practical
+  ceiling - not a hard one, but past it you're shipping megabytes to people
+  who never open the search box. When the catalog outgrows the page, the
+  search outgrows the page too: that's a server-side search job.
+- **Fuzzy "did you mean" search.** The scoring is token-based with a loose
+  substring safety net, not an edit-distance spellchecker. It handles partial
+  input and indexed synonyms well; it will not rescue garbled multi-word
+  queries the way engines with materialized fuzzy matching do.
+
 ## Origin
 
 Extracted from The DJ Calendar (https://thedjcalendar.com), where this pattern
